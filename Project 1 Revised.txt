@@ -1,0 +1,103 @@
+//Kevin Bruce
+//Project 1 Correction
+
+import java.util.Scanner;
+public class Project1{
+
+	public static void main(String[] args){
+		//calls the Welcome Screen where the user is able to input a command to retrieve some info
+		welcomescreen();
+	} 
+
+	public static void welcomescreen(){
+		//Display the title whenever the program is executed
+		System.out.println("Welcome to the 2014 Lawn Olympic Games");
+		//gives us permission to start entering commands 
+		Scanner begin = new Scanner(System.in);
+		System.out.println("Input a command: ");
+		String inputCom;
+		inputCom = begin.nextLine();
+		while(inputCom != "q") {
+
+			String[] Events = initEvents(); //this sets an array that is equaled to the return from initEvents
+			String[][] Olympians = initOlympians(); //this sets an array that is equaled to the return from initOlympians
+
+			if (inputCom.equals("events") || inputCom.equals("e")) {
+				aryEvents(Events); // method to display the day's events.
+			} else if (inputCom.equals("olympians") || inputCom.equals("o")) {
+				aryOlympians(Olympians); // method to display the day's olympians
+			} else if (inputCom.equals("help") || inputCom.equals("h")) {
+				help(); // method to display the help screen
+			} else
+				System.out.println("Error: Please input the right command Or input 'h' to refer to the Help Screen.");
+			inputCom = begin.nextLine();
+		}
+	}
+
+	//the Help Method 
+	public static void help(){
+		String help = ("To view the Events of the day input 'e'."  +
+				"\nTo view the Olympians of the day input 'o'.");
+		System.out.println("Welcome to the Help Screen");	
+		System.out.println(help); //calls the help screen
+		//lets the user know that they can enter another command 
+		System.out.println("Input another command:");
+	}
+
+	//Event Method
+	public static void aryEvents(String[] Events){
+		System.out.println("The Events of the day are: ");
+		// this loop iterates through the array and displays the "Events of the day"
+		for(int i = 0; i < Events.length; i++){
+			System.out.println(Events[i]);
+		}	//lets the user know that they can enter more than one command 
+		System.out.println("Input another command:");
+	}
+
+	public static String[] initEvents(){
+		//array to hold the event names
+		String Events[] = {"Egg Toss", 
+				"Scavenger Hunt",
+				"Trivia Contest" ,
+				"Cribbage",
+				"Croguet",
+				"Dessert Contest"};
+		return Events;
+	}
+
+	//Olympian Method
+	public static void aryOlympians(String[][] Olympians){
+		// this loop iterates through the array and displays each Olympian and their data
+		for(int r = 0; r < Olympians.length; r++){
+			for(int c = 0; c < Olympians[c].length ; c++){
+				//helps print out the data in table format to keep it neat
+				System.out.print("\t" + Olympians[r][c]);
+			}	/*helps arrange the data by pushing the next(Olympian Data) to the next line, 
+					this keeps the Data neatly formatted*/
+			System.out.print("\n");
+		}		//lets the user know that they can enter more than one command
+		System.out.println("Input another command:");
+	}
+
+	public static String[][] initOlympians(){
+		//a matrix (two-dimensional array) for holding the Olympians
+		String Olympians[][] = {{"Ben", "Acosta", "M", "20"},
+				{"Gabriela", "Alford", "F", "23"}, 
+				{"John", "Almanza", "M", "35"},
+				{"Sam", "Hayward", "F", "25"}, 
+				{"Gabe", "Cahill", "M", "21"}, 
+				{"Mason", "Ogden", "M", "24"},
+				{"Sophia", "Walden", "F", "22"}, 
+				{"Emilia", "Arthur", "F", "20"},
+				{"Michael", "Arriaga", "M", "32"},  
+				{"Isabella", "Agnew", "F", "24"},
+				{"Noah", "Mccaskill", "M", "29"},
+				{"Aiden", "Lafferty", "M", "23"},
+				{"Abigail", "Olsen", "F", "30"},
+				{"Jaden", "Daily", "M", "33"},
+				{"Liam", "Adamson", "M", "24"}};
+
+		System.out.println("The Olympians of the day are: ");
+		return Olympians;
+	}		
+}
