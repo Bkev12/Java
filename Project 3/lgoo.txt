@@ -1,0 +1,17 @@
+LGOO
+Ben Acosta,M,20
+Gabriela Alford,F,23
+John Almanza,M,35
+Sam Hayward,F,25
+Gabe Cahill,M,21
+Mason Ogden,M,24
+Sophia Walden,F,22
+Emilia Arthur,F,20
+Michael Arriaga,M,32
+Isabella Agnew,F,24
+Noah Mccaskill,M,29
+Aiden Lafferty,M,23
+Abigail Olsen,F,30
+Jaden Daily,M,33
+Liam Adamson,M,24
+Jen Darson,F,27
